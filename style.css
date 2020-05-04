@@ -1,0 +1,365 @@
+:root {
+  --primary-color: rgba(74, 139, 192, 0.85);
+  --secondary-color: rgba(229, 148, 0, 0.95);
+  --overlay-color: rgba(24, 39, 51, 0.85);
+  --light-color: #f3f3f3;
+  --dark-color: #333;
+  --menu-speed: 0.75s;
+  --max-width: 1100px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  line-height: 1.4;
+  background: url("/img/seafloor.png") center center fixed no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+/*Utilities*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0.55rem;
+  line-height: 1.3;
+  text-align: center;
+}
+
+p {
+  margin: 0.5rem 0;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 0 2rem;
+  overflow: hidden;
+}
+
+ul {
+  list-style: none;
+}
+
+.card {
+  background: var (--secondary-color);
+  padding: 1rem;
+}
+
+.page-container {
+  display: grid;
+  grid-template-columns: 5fr 2fr;
+  margin: 2rem 0;
+  grid-gap: 1.8rem;
+}
+
+.page-container > *:first-child {
+  grid-row: 1 / span 3;
+}
+
+#article-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: justfy;
+  padding: 0.5rem;
+}
+#article {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+#article-main .page-container .card h1 p {
+  transform: translateY(-1200px);
+  animation: heading var(--animate-speed) forwards ease-in;
+}
+
+#categories .card-aside {
+  transform: translateY(-1800px);
+  animation: heading var(--animate-speed) forwards ease-in 1s;
+}
+
+#article .category {
+  margin-top: 0.4rem;
+}
+
+#articles .card-aside > *:last-child {
+  grid-column: 5 / span 2;
+}
+
+l-heading {
+  font-size: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  border: none;
+  background: var(--dark-color);
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  text-decoration: none;
+}
+
+.btn-light {
+  background: var(--light-color);
+}
+.btn-primary {
+  background: var(--primary-color);
+}
+.btn-secondary {
+  background: var(--secondary-color);
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+.card-aside {
+  background: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+.card {
+  background: #fff;
+  padding: 1rem;
+  text-align: justify;
+}
+
+.bg-dark {
+  background: var(--dark-color);
+  color: #fff;
+}
+
+.bg-primary {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.bg-secondary {
+  background: var(--secondary-color);
+  color: #fff;
+}
+
+.bg-dark h1,
+.bg-dark h2,
+.bg-dark h3,
+.bg-dark a,
+.bg-primary h1,
+.bg-primary h2,
+.bg-primary h3,
+.bg-primary a,
+.bg-secondary h1,
+.bg-secondary h2,
+.bg-secondary h3,
+.bg-secondary a {
+  color: #fff;
+}
+
+.py-1 {
+  padding: 1.5rem 0;
+}
+.py-2 {
+  padding: 2rem 0;
+}
+.py-3 {
+  padding: 3rem 0;
+}
+.p-1 {
+  padding: 1.5rem;
+}
+.p-2 {
+  padding: 2rem;
+}
+.p-3 {
+  padding: 3rem;
+}
+
+.l-heading {
+  font-size: 3rem;
+}
+.l-heading2 {
+  font-size: 3rem;
+  color: #fff;
+}
+
+.l-heading3 {
+  font-size: 1.5rem;
+  text-align: justify;
+}
+
+#main-menu .container {
+  display: grid;
+  grid-template-columns: 8fr 4fr;
+  padding: 1rem;
+}
+
+#main-menu .social {
+  justify-self: end;
+}
+
+.social i {
+  color: var(--light-color);
+  margin-right: 0.5rem;
+}
+
+/*showcase*/
+
+#showcase {
+  background: var(--primary-color);
+  color: #ffffff;
+  height: 100vh;
+  position: relative;
+}
+
+#showcase:before {
+  content: "";
+  background: url("../img/bflf.jpg") no-repeat center center/cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+#showcase .showcase-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+
+#showcase h1 {
+  font-size: 2.7rem;
+}
+
+#showcase p {
+  font-size: 1.2rem;
+}
+
+/*Extra mural activities*/
+
+#extra-mural .articles-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+}
+
+#extra-mural .articles-container > *:last-child {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  align-items: center;
+}
+
+#extra-mural .articles-container > *:last-child {
+  grid-column: 1;
+}
+
+/*fees*/
+
+#fees h1 {
+  font-size: 2.7rem;
+  text-align: center;
+  padding: 2.2rem;
+}
+
+#fees .items {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: baseline;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.item {
+  background: #f4f4f4;
+  text-align: center;
+  padding: 1rem;
+  margin: 0.5rem;
+  flex-basis: 200px;
+}
+/*Testimonials*/
+
+#references {
+  display: flex;
+  height: 100%;
+  background: url("../img/seafloor.png") no-repeat center center/cover;
+  padding-top: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+}
+
+#article-main .reference {
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+#article-main .reference img {
+  width: 75px;
+  float: left;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+/*contact form*/
+
+#contact-img {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+#contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+#contact-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border-color: var(--primary-color);
+}
+
+#contact-form textarea {
+  height: 200px;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+}
+
+/*footer*/
+
+#main-footer {
+  background: var(--primary-color);
+  color: #fff;
+  grid-column: 1 / span 4;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.75rem;
+}
